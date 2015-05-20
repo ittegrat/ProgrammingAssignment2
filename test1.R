@@ -5,7 +5,7 @@ source("cachematrix.R")
 a <- matrix(1:4, nrow=2)
 
 cm <- makeCacheMatrix(a)
-m <- cm$get()
+m <- cm$get.matrix()
 m
 identical(m,a)
 
