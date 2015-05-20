@@ -34,23 +34,23 @@ makeCacheMatrix <- function(mtx = matrix()) {
   list(
 
     # Store a new matrix and invalidates the cache
-    set.matrix = set.matrix <- function(m) {
+    set.matrix = function(m) {
       mtx <<- m
       inv <<- NULL
     },
     
     # Returns the stored matrix
-    get.matrix = get.matrix <- function() {
+    get.matrix = function() {
       mtx
     },
     
     # Fill the cache with the inverse matrix
-    set.inverse = set.inverse <- function(m) {
+    set.inverse = function(m) {
       inv <<- m
     },
 
     # Returns the content of the cache
-    get.inverse = get.inverse <- function() {
+    get.inverse = function() {
       inv
     }
 
