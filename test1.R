@@ -1,17 +1,23 @@
 
 rm(list=ls())
 source("cachematrix.R")
+tol <- 12
 
-a <- matrix(1:4, nrow=2)
+a <- matrix(rnorm(25), nrow=5)
 
 cm <- makeCacheMatrix(a)
 m <- cm$get.matrix()
-m
 identical(m,a)
 
 invisible(cacheSolve(cm))
 b <- cacheSolve(cm)
-b
+#b
 
-a %*% b
-b %*% a
+identical(
+  round(a %*% b, digits = tol),
+  diag(nrow(a))
+)
+identical(
+  round(b %*% a, digits = tol),
+  diag(nrow(a))
+)
