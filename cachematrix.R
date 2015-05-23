@@ -7,7 +7,7 @@
 ## - cacheSolve(x):
 ##     returns the (possibly cached) inverse of a matrix stored in a closure
 ##     created by the makeCacheMatrix function. The first time this function is
-##     called, it calculates, store and returns the inverse. Subsequent calls
+##     called, it calculates, stores and returns the inverse. Subsequent calls
 ##     return the cached inverse.
 ##
 ##  N.B: no arguments check is performed by the two functions, so you have to
@@ -79,7 +79,7 @@ cacheSolve <- function(x, ...) {
     inv <- solve(mtx, ...)
     x$set.inverse(inv)
   }
-  # The "else" part is for debugging purposes
+  # The "else" part is for debugging purposes only
   else {
     message("getting cached data")
   }
